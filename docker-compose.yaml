@@ -1,0 +1,12 @@
+version: "3.0"
+services:
+    b2b-app:
+        restart: always
+        build: .
+        volumes:
+            - ./data:/app/data
+        env_file:
+            - ./.env
+        ports:
+            - "3000:3000"
+        command: ["node", "/app/src/app.js"]
